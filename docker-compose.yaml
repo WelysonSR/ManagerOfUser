@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  node: 
+    image: node:16
+    container_name: atividade1
+    tty: true
+    stdin_open: true
+    command: bash -c "npm install && npm start"
+    restart: always
+    ports:
+      - 3001:3001
+    volumes:
+      - ./app:/app
+    working_dir: /app
